@@ -32,7 +32,7 @@ ScreenManager:
 		pos_hint: {'center_x': 0.5, 'center_y': 0.55}	
 		size_hint_x: None
 		width: 200
-		on_release: app.root.current='ongoing_orders' if pin.text == '821036' else 'auth_screen'
+		on_release: app.root.current='ongoing_orders' if pin.text == '' else 'auth_screen'
 
 	BoxLayout: 
 		padding:5
