@@ -1,0 +1,60 @@
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+ScreenManager:
+	transition: SlideTransition()
+	AuthScreen:
+	OngoingOrders:
+
+
+<AuthScreen>:
+	name: 'auth_screen'
+	
+	MDLabel:
+		text: 'Enter Pin'
+		halign: 'center'
+		font_style: 'H3'
+		theme_text_color: 'Custom'
+		text_color: app.theme_cls.primary_color
+		pos_hint: {'center_x':0.5, 'center_y':0.85} 
+
+	MDTextFieldRound:
+		id: pin
+		size_hint: 1, None
+		height: '100dp'
+		mode: 'rectangle'
+		password: True
+		pos_hint: {'center_x':0.5, 'center_y':0.7}
+		size_hint_x: None
+		width: 350
+	
+	MDRectangleFlatButton:
+		text: "Done"
+		pos_hint: {'center_x': 0.5, 'center_y': 0.55}	
+		size_hint_x: None
+		width: 200
+		on_release: app.root.current='ongoing_orders' if pin.text == '821036' else 'auth_screen'
+
+	BoxLayout: 
+		padding:5
+		Image: 
+			source: 'logo.png'
+			size_hint_x: 0.4
+			size_hint_y: 0.3
+			allow_stretch: True
+			  
+
+<OngoingOrders>:
+	name: 'ongoing_orders'
+	
+	ScrollView:
+		MDList:
+			id: container
+			
+	MDFillRoundFlatButton:
+		text: "Reload Data"
+		pos_hint: {'center_x': 0.5, 'center_y': 0.05}	
+		size_hint_x: None
+		width: 300
+		on_release: root.reload()
+
+	
