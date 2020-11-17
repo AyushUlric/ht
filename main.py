@@ -11,10 +11,10 @@ import pyrebase
 
 mobile = None
 firebase_config = {
-	"apiKey": "AIzaSyCpB9fglh7Lh6gZlX-9MSvTgEww6y61Z4w",
-	"authDomain": "hospitele-app.firebaseapp.com",
-	"databaseURL": "https://hospitele-app.firebaseio.com",
-	"storageBucket": "hospitele-app.appspot.com"
+	"apiKey": "",
+	"authDomain": "",
+	"databaseURL": "",
+	"storageBucket": ""
 }
 firebase = pyrebase.initialize_app(firebase_config)
 db = firebase.database()
